@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "I/mIOxAKZnpvJyDYgwL0YTitgXK02EriL5WUhEKUcN0=",
+  "Source": "BankingTransactionAPI",
+  "BasePath": "_content/BankingTransactionAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

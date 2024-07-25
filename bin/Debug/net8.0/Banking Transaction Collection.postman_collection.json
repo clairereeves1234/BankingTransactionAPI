@@ -1,0 +1,391 @@
+{
+	"info": {
+		"_postman_id": "679a1c68-39af-40cc-9c88-b88c1b64e1ca",
+		"name": "Banking Transaction Collection",
+		"description": "Collection with example requests to demonstrate successful operations, error handling, and validation of user input.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33292333"
+	},
+	"item": [
+		{
+			"name": "Create User One",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"Claire\", \r\n    \"LastName\": \"Reeves\",\r\n    \"Balance\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5173/api/BankingTransactions/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"api",
+						"BankingTransactions",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User Two",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"Emily\", \r\n    \"LastName\": \"Reeves\",\r\n    \"Balance\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5173/api/BankingTransactions/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"api",
+						"BankingTransactions",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User Three",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"Kathy\", \r\n    \"LastName\": \"Reeves\",\r\n    \"Balance\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5173/api/BankingTransactions/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"api",
+						"BankingTransactions",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user with invalid input data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"Doug\", \r\n    \"Balance\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5173/api/BankingTransactions/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"api",
+						"BankingTransactions",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user with negative initial balance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"Claire\", \r\n    \"LastName\": \"Reeves\",\r\n    \"Balance\": -10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5173/api/BankingTransactions/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"api",
+						"BankingTransactions",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer Funds",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DonorId\":\"\",\r\n    \"RecipientId\": \"\",\r\n    \"Amount\": 200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5173/api/BankingTransactions/transfers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"api",
+						"BankingTransactions",
+						"transfers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer with insufficient funds",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DonorId\":\"\",\r\n    \"RecipientId\": \"\",\r\n    \"Amount\": 2000000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5173/api/BankingTransactions/transfers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"api",
+						"BankingTransactions",
+						"transfers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer with invalid input data",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DonorId\": \"\",\r\n    \"Amount\": 200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5173/api/BankingTransactions/transfers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"api",
+						"BankingTransactions",
+						"transfers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer with invalid userid",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DonorId\": \"invalid\",\r\n    \"RecipientId\": \"\",\r\n    \"Amount\": 200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5173/api/BankingTransactions/transfers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"api",
+						"BankingTransactions",
+						"transfers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer with negative amount",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DonorId\":\"\",\r\n    \"RecipientId\": \"\",\r\n    \"Amount\": -10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5173/api/BankingTransactions/transfers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"api",
+						"BankingTransactions",
+						"transfers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Transaction History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5173/api/BankingTransactions/transfers/users/88057652-573b-4777-9433-ef17b9df9aac",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"api",
+						"BankingTransactions",
+						"transfers",
+						"users",
+						"88057652-573b-4777-9433-ef17b9df9aac"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Transaction History with invalid userid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5173/api/BankingTransactions/transfers/users/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"api",
+						"BankingTransactions",
+						"transfers",
+						"users",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5173/api/BankingTransactions/users/88057652-573b-4777-9433-ef17b9df9aac",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"api",
+						"BankingTransactions",
+						"users",
+						"88057652-573b-4777-9433-ef17b9df9aac"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
