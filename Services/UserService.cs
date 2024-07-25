@@ -17,10 +17,7 @@ namespace BankingTransactionAPI.Services
 
         public async Task<User> GetUserById(string id) => await _userRepository.GetUser(id);
 
-        public async Task<List<Transaction>> GetTransactionsByUserId(string userId)
-        {
-            return await _userRepository.GetUserTransactions(userId);
-        }
+        public async Task<List<Transaction>> GetTransactionsByUserId(string userId) => await _userRepository.GetUserTransactions(userId);
 
         public async Task<List<User>> TransferFunds(Transaction transaction)
         {
