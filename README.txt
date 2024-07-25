@@ -6,6 +6,7 @@ For more information on setting up C# and .NET in VSCode use this link: https://
 
 Instructions for running: 
 In the terminal navigate to the BankingTransactionAPI directory
+Enter "dotnet build" to run the application
 Enter "dotnet run" to run the application
 I have included a postman collection with example requests called "Banking Transaction Collection.postman_collection.json"
 
