@@ -10,5 +10,4 @@ Enter "dotnet run" to run the application
 I have included a postman collection with example requests called "Banking Transaction Collection.postman_collection.json"
 
 Assumptions: 
-- Many users can have the same first name and last name as it is assumed that there may be two different users with the same name. 
-Their userId created upon user creation is used to uniquely identify them. 
+- Many users can have the same first name and last name as it is assumed that there may be different users with the same name. Their userId assigned upon user creation is used to uniquely identify them. 
