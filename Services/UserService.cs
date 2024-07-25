@@ -13,9 +13,9 @@ namespace BankingTransactionAPI.Services
             _userRepository = userRepository;
         }
 
-        public Task<User> CreateUser(User user) => _userRepository.AddUser(user);
+        public async Task<User> CreateUser(User user) => await _userRepository.AddUser(user);
 
-        public Task<User> GetUserById(string id) => _userRepository.GetUser(id);
+        public async Task<User> GetUserById(string id) => await _userRepository.GetUser(id);
 
         public async Task<List<Transaction>> GetTransactionsByUserId(string userId)
         {

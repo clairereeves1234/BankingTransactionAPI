@@ -1,5 +1,4 @@
 using BankingTransactionAPI.Models;
-using System.Collections.Generic;
 
 namespace BankingTransactionAPI.Services
 {
